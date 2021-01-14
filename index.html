@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz Challenge!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="Assets/customStyles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light start">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">High scores</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Time</a>
+            </li>
+
+        </ul>
+    </nav>
+    <main class="container start" >
+        <h1>Coding Quiz Challenge</h1>
+        <h2>Try to get as many questions as you can within the time limit. Wrong answers subtract 5 seconds. The time left after completion will be your final score.</h2>
+        <button type="button" class="btn btn-custom" id="startButton">Start!</button>
+    </main class="container Q1">
+        <h2></h2>
+
+    <main>
+        <h2>Question 1: Which of these is NOT a variable in Javascript?</h2>
+        <ul class="questionList">
+            <li class="answerBtn">
+                <button type="button" class="btn btn-custom" id="Wrong">Number</button>
+            </li>
+            <li>
+                <button type="button" class="btn btn-custom" id="Wrong">Boolean</button>
+            </li>
+            <li>
+                <button type="button" class="btn btn-custom" id="Correct">Javatime</button>
+            </li>
+            <li>
+                <button type="button" class="btn btn-custom" id="Wrong">String</button>
+            </li>
+        </ul>
+    </main>
+
+
+
+
+
+    <script src="Assets/script.js"></script>
+</body>
+</html>

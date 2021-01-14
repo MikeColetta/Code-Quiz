@@ -1,0 +1,24 @@
+h1, h2, h3 {
+    text-align: center;
+}
+#startButton {
+    margin-left: 47%;
+}
+
+.start {
+}
+
+.btn-custom {
+    background-color: purple;
+    border-color: purple;
+    color: white;
+    margin: 10px, 10px;
+}
+
+.questionList {
+    margin-left: 30%;
+}
+
+.answerBtn {
+    margin-top: 10px;
+}
