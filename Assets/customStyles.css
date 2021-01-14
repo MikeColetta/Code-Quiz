@@ -5,6 +5,10 @@ h1, h2, h3 {
     margin-left: 47%;
 }
 
+li {
+    margin: 10px 0;
+}
+
 .start {
 }
 
@@ -13,12 +17,10 @@ h1, h2, h3 {
     border-color: purple;
     color: white;
     margin: 10px, 10px;
+    padding: 5px;
+    height: 30px
 }
 
 .questionList {
-    margin-left: 30%;
-}
-
-.answerBtn {
-    margin-top: 10px;
+    margin-left: 15%;
 }
