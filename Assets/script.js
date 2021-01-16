@@ -32,6 +32,8 @@ var q4Wrong1 = document.querySelector("#q4Wrong1")
 var q4Wrong2 = document.querySelector("#q4Wrong2")
 var q4Wrong3 = document.querySelector("#q4Wrong3")
 
+var submit = document.querySelector("#submit")
+
 var timeLeft = 60;
 
 
@@ -166,9 +168,25 @@ q4Wrong3.addEventListener("click", function(){
 });
 
 function cacheScore() {
-    localStorage.setItem("score", timeLeft)
-    finalScore.textContent = timeLeft
+    localStorage.setItem("score", timeLeft);
+    console.log(timeLeft)
+    var userScore = localStorage.getItem("score")
+    finalScore.textContent = userScore;
+    console.log(userScore)
 }
+
+submit.addEventListener("click", function (event) {
+
+    var initials = document.querySelector("#initials").value;
+    if (initials === "") {
+        alert("You can't leave initials blank!");
+    } else {
+        alert("Highscore submitted, hooray!")
+
+        localStorage.setItem("initials", initials)
+    }
+
+})
 
 //this function runs the timer
 function quizTimer() {
