@@ -79,17 +79,17 @@ q1Correct.addEventListener("click", function(){
 
 q1Wrong1.addEventListener("click", function(){
     hideQ1();
-    timeLeft -= 5;
+    timeLeft -= 10;
 });
 
 q1Wrong2.addEventListener("click", function(){
     hideQ1();
-    timeLeft -= 5;
+    timeLeft -= 10;
 });
 
 q1Wrong3.addEventListener("click", function(){
     hideQ1();
-    timeLeft -= 5;
+    timeLeft -= 10;
 });
 
 
@@ -104,17 +104,17 @@ q2Correct.addEventListener("click", function(){
 
 q2Wrong1.addEventListener("click", function(){
     hideQ2();
-    timeLeft -= 5;
+    timeLeft -= 10;
 });
 
 q2Wrong2.addEventListener("click", function(){
     hideQ2();
-    timeLeft -= 5;
+    timeLeft -= 10;
 });
 
 q2Wrong3.addEventListener("click", function(){
     hideQ2();
-    timeLeft -= 5;
+    timeLeft -= 10;
 });
 
 function hideQ3(){
@@ -128,17 +128,17 @@ function hideQ3(){
 
  q3Wrong1.addEventListener("click", function(){
      hideQ3();
-     timeLeft -= 5;
+     timeLeft -= 10;
  });
 
  q3Wrong2.addEventListener("click", function(){
     hideQ3();
-    timeLeft -= 5;
+    timeLeft -= 10;
 });
 
 q3Wrong3.addEventListener("click", function(){
     hideQ3();
-    timeLeft -= 5;
+    timeLeft -= 10;
 });
 
 function hideQ4(){
@@ -154,17 +154,17 @@ function hideQ4(){
 
  q4Wrong1.addEventListener("click", function(){
      hideQ4();
-     timeLeft -= 5;
+     timeLeft -= 10;
  });
 
  q4Wrong2.addEventListener("click", function(){
     hideQ4();
-    timeLeft -= 5;
+    timeLeft -= 10;
 });
 
 q4Wrong3.addEventListener("click", function(){
     hideQ4();
-    timeLeft -= 5;
+    timeLeft -= 10;
 });
 
 function cacheScore() {
