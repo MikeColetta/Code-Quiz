@@ -11,6 +11,8 @@ var initialForm = document.querySelector("#initialForm")
 var initialInput = document.querySelector("#initialInput")
 var highscores = document.querySelector("#highscores")
 var scoreboard = document.querySelector("#scoreboard")
+var userClock = document.querySelector("#userClock")
+var finalScore = document.querySelector("#finalScore")
 
 //Answer buttons
 var q1Correct = document.querySelector("#q1Correct")
@@ -139,7 +141,9 @@ q3Wrong3.addEventListener("click", function(){
 
 function hideQ4(){
     question4.setAttribute("style", "display:none;");
-     initialForm.setAttribute("style", "display:block;");
+    initialForm.setAttribute("style", "display:block;");
+    userClock.setAttribute("style", "display:none;")
+    cacheScore();
  }
 
  q4Correct.addEventListener("click", function(){
@@ -161,29 +165,24 @@ q4Wrong3.addEventListener("click", function(){
     timeLeft -= 5;
 });
 
-function addInitials() {
-    
+function cacheScore() {
+    localStorage.setItem("score", timeLeft)
+    finalScore.textContent = timeLeft
 }
 
-
-
-
-
-
-//this function should hide the start page and start timer
+//this function runs the timer
 function quizTimer() {
     var timer = setInterval(function () {
         timeLeft--;
-        console.log(timeLeft);
 
         if (timeLeft < 0) {
             clearInterval(timer);
+            hideQ1()
+            hideQ2()
+            hideQ3()
             hideQ4()
-        }
-        else {
+        } else {
             countdownClock.textContent = timeLeft;
         }
     }, 1000);
 }
-//event listener for the start button and run startQuiz
-
