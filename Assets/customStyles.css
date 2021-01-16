@@ -17,11 +17,15 @@ li {
     background-color: purple;
     border-color: purple;
     color: white;
-    margin: 10px, 10px;
+    margin-top: 5px;
     padding: 5px;
     height: 30px
 }
 
 .questionList {
     margin-left: 15%;
+}
+
+#scoreBoard {
+
 }

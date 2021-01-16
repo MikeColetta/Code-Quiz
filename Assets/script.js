@@ -1,3 +1,8 @@
+
+
+
+
+
 //Will need different sections of HTML and hide/show what the user is using at the time. 
 
 //No loop, just each button continues the game to a new piece of hidden HTML.

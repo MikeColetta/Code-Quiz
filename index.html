@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz Challenge!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="Assets/customStyles.css">
 </head>
+
 <body>
+    <!-- Highscores link and timer -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light start">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">High scores</a>
+                <a class="nav-link" href="#">High scores</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="#">Time</a>
             </li>
-
         </ul>
     </nav>
-    <main class="container start" >
+    <!-- Start menu -->
+    <main class="container col-5 start">
         <h1>Coding Quiz Challenge</h1>
-        <h2>Try to get as many questions as you can within the time limit. Wrong answers subtract 5 seconds. The time left after completion will be your final score.</h2>
+        <h2>Try to get as many questions as you can within the time limit. Wrong answers subtract 5 seconds. The time
+            left after completion will be your final score.</h2>
         <button type="button" class="btn btn-custom" id="startButton">Start!</button>
     </main class="container Q1">
-        <h2></h2>
-
-    <main class="container" id="Q1">
+    <h2></h2>
+    <!-- Question 1 -->
+    <main class="container col-5" id="Q1">
         <h2>Question 1: Commonly used data types do NOT include?</h2>
         <ul class="questionList">
             <li>
@@ -45,8 +50,8 @@
             </li>
         </ul>
     </main>
-
-    <main class="container" id="Q2">
+    <!-- Question 2 -->
+    <main class="container col-5" id="Q2">
         <h2>Question 2: Arrays in JavaScript can be used to store _____.</h2>
         <ul class="questionList">
             <li>
@@ -63,8 +68,8 @@
             </li>
         </ul>
     </main>
-
-    <main class="container" id="Q3">
+    <!-- Question 3 -->
+    <main class="container col-5" id="Q3">
         <h2>Question 3: String values must be enclosed in ______ when being assigned to variables.</h2>
         <ul class="questionList">
             <li>
@@ -81,9 +86,10 @@
             </li>
         </ul>
     </main>
-
-    <main class="container" id="Q4">
-        <h2>Question 4: A very useful tool used during development and debugging for printing content to the debugger is: </h2>
+    <!-- Question 4 -->
+    <main class="container col-5" id="Q4">
+        <h2>Question 4: A very useful tool used during development and debugging for printing content to the debugger
+            is: </h2>
         <ul class="questionList">
             <li>
                 <button type="button" class="btn btn-custom" id="Wrong">1. JavaScript</button>
@@ -99,20 +105,28 @@
             </li>
         </ul>
     </main>
-
-    <main class="container" id="initialForm">
+    <!-- Enter your initials menu -->
+    <main class="container col-5" id="initialForm">
         <h2>All done!</h2>
         <h3>Your final score is: <span id="finalScore"></span></h3>
-        <div class="form-group">
-            <label for="playerInitials">Enter your initials!</label> <input type="text" class="form-control" id="playerInitials">
-            <button type="button" class="btn btn-custom" id="">Submit</button>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Enter Your Initials!</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" id="initialInput">
         </div>
     </main>
-    <main class="container" id="highScores">
+    <!-- Highscore scoreboard -->
+    <main class="container col-5" id="highScores">
         <h2>Highscores!</h2>
-        <!-- Highscore form goes here when you figure that out. -->
-        <button type="button" class="btn btn-custom" id="">Go back</button>
-        <button type="button" class="btn btn-custom" id="">Clear highscores</button>
+        <div class="card">
+            <div class="card-body" id="scoreBoard">
+                High Scores Go Here!
+            </div>
+        </div>
+        <button type="button" class="btn btn-custom" id="goBack">Go back</button>
+        <button type="button" class="btn btn-custom" id="clearHighscores">Clear highscores</button>
 
     </main>
 
@@ -121,4 +135,5 @@
 
     <script src="Assets/script.js"></script>
 </body>
+
 </html>
