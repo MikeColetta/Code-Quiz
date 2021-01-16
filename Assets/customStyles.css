@@ -22,3 +22,27 @@ li {
 .questionList {
     margin-left: 15%;
 }
+
+#Q1 {
+    display: none;
+}
+
+#Q2 {
+    display: none;
+}
+
+#Q3 {
+    display: none;
+}
+
+#Q4 {
+    display: none;
+}
+
+#initialForm {
+    display: none;
+}
+
+#highscores {
+    display: none;
+}

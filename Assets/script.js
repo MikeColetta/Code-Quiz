@@ -6,7 +6,9 @@ var question2 = document.querySelector("#Q2")
 var question3 = document.querySelector("#Q3")
 var question4 = document.querySelector("#Q4")
 var correctAnswer = document.querySelector(".correct")
-var wrongAnswer = document.querySelector(".wrong")
+var wrongAnswer1 = document.querySelector(".wrong1")
+var wrongAnswer2 = document.querySelector(".wrong2")
+var wrongAnswer3 = document.querySelector(".wrong3")
 var initialForm = document.querySelector("#initialForm")
 var highscores = document.querySelector("#highscores")
 var scoreboard = document.querySelector("#scoreboard")
@@ -38,12 +40,66 @@ var scoreboard = document.querySelector("#scoreboard")
     //Two buttons: 1. Clear high scores 2. Restart
 
 function hideStart(){
-    startScreen.setAttribute("style", "display:none;")
-}
+    startScreen.setAttribute("style", "display:none;");
+    question1.setAttribute("style", "display:block;");
+};
 
 startButton.addEventListener("click", function(){
     hideStart();
-})
+});
+
+console.log(hideStart);
+
+function hideQ1(){
+    question1.setAttribute("style", "display:none;");
+    question2.setAttribute("style", "display:block;");
+};
+
+correctAnswer.addEventListener("click", function(){
+    hideQ1();
+});
+
+wrongAnswer.addEventListener("click", function(){
+    hideQ1();
+    //subtract 10 seconds from timer
+});
+
+console.log(correctAnswer);
+console.log(wrongAnswer);
+
+function hideQ2(){
+    question2.setAttribute("style", "display:none;");
+    question3.setAttribute("style", "display:block;");
+};
+
+correctAnswer.addEventListener("click", function(){
+    hideQ2();
+});
+
+wrongAnswer.addEventListener("click", function(){
+    hideQ2();
+    //subtract 10 seconds from timer
+});
+
+console.log(hideQ2)
+
+function hideQ3(){
+    question3.setAttribute("style", "display:none;");
+    question4.setAttribute("style", "display:block;");
+}
+
+correctAnswer.addEventListener("click", function(){
+    hideQ3();
+});
+
+wrongAnswer.addEventListener("click", function(){
+    hideQ3();
+    //subtract 10 seconds from timer
+});
+
+
+
+
 
 function answerQuestion () {}
 
