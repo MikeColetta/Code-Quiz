@@ -30,7 +30,8 @@ var q4Wrong1 = document.querySelector("#q4Wrong1")
 var q4Wrong2 = document.querySelector("#q4Wrong2")
 var q4Wrong3 = document.querySelector("#q4Wrong3")
 
-//var timeLeft = 60
+var timeLeft = 60;
+
 
 //Will need different sections of HTML and hide/show what the user is using at the time. 
 
@@ -60,10 +61,8 @@ function hideStart(){
 
 startButton.addEventListener("click", function(){
     hideStart();
-    startQuiz();
+    quizTimer();
 });
-
-console.log(hideStart);
 
 function hideQ1(){
     question1.setAttribute("style", "display:none;");
@@ -76,17 +75,17 @@ q1Correct.addEventListener("click", function(){
 
 q1Wrong1.addEventListener("click", function(){
     hideQ1();
-    //subtract 10 seconds from timer
+    timeLeft -= 5;
 });
 
 q1Wrong2.addEventListener("click", function(){
     hideQ1();
-    //subtract 10 seconds from timer
+    timeLeft -= 5;
 });
 
 q1Wrong3.addEventListener("click", function(){
     hideQ1();
-    //subtract 10 seconds from timer
+    timeLeft -= 5;
 });
 
 
@@ -101,17 +100,17 @@ q2Correct.addEventListener("click", function(){
 
 q2Wrong1.addEventListener("click", function(){
     hideQ2();
-    //subtract 10 seconds from timer
+    timeLeft -= 5;
 });
 
 q2Wrong2.addEventListener("click", function(){
     hideQ2();
-    //subtract 10 seconds from timer
+    timeLeft -= 5;
 });
 
 q2Wrong3.addEventListener("click", function(){
     hideQ2();
-    //subtract 10 seconds from timer
+    timeLeft -= 5;
 });
 
 function hideQ3(){
@@ -125,17 +124,17 @@ function hideQ3(){
 
  q3Wrong1.addEventListener("click", function(){
      hideQ3();
-     //subtract 10 seconds from timer
+     timeLeft -= 5;
  });
 
  q3Wrong2.addEventListener("click", function(){
     hideQ3();
-    //subtract 10 seconds from timer
+    timeLeft -= 5;
 });
 
 q3Wrong3.addEventListener("click", function(){
     hideQ3();
-    //subtract 10 seconds from timer
+    timeLeft -= 5;
 });
 
 function hideQ4(){
@@ -149,17 +148,17 @@ function hideQ4(){
 
  q4Wrong1.addEventListener("click", function(){
      hideQ4();
-     //subtract 10 seconds from timer
+     timeLeft -= 5;
  });
 
  q4Wrong2.addEventListener("click", function(){
     hideQ4();
-    //subtract 10 seconds from timer
+    timeLeft -= 5;
 });
 
 q4Wrong3.addEventListener("click", function(){
     hideQ4();
-    //subtract 10 seconds from timer
+    timeLeft -= 5;
 });
 
 function addInitials() {
@@ -172,19 +171,19 @@ function addInitials() {
 
 
 //this function should hide the start page and start timer
-function startQuiz() {
-    var timeLeft = 60;
+function quizTimer() {
     var timer = setInterval(function () {
-        timeLeft--
-        console.log(timeLeft)
+        timeLeft--;
+        console.log(timeLeft);
 
-        if (timeLeft === 0) {
-            clearInterval(timer)
+        if (timeLeft < 0) {
+            clearInterval(timer);
+            hideQ4()
         }
         else {
-            countdownClock.textContent = timeLeft
+            countdownClock.textContent = timeLeft;
         }
-    }, 1000)
+    }, 1000);
 }
 //event listener for the start button and run startQuiz
 
