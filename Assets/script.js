@@ -1,3 +1,16 @@
+var countdownClock = document.querySelector("#countdownClock");
+var startScreen = document.querySelector(".start");
+var startButton = document.querySelector("#startButton")
+var question1 = document.querySelector("#Q1")
+var question2 = document.querySelector("#Q2")
+var question3 = document.querySelector("#Q3")
+var question4 = document.querySelector("#Q4")
+var correctAnswer = document.querySelector(".correct")
+var wrongAnswer = document.querySelector(".wrong")
+var initialForm = document.querySelector("#initialForm")
+var highscores = document.querySelector("#highscores")
+var scoreboard = document.querySelector("#scoreboard")
+
 
 
 
@@ -23,6 +36,18 @@
     //when they submit high score saves Initials those initials go to high score page.
 //View initials and high scores. Go back or clear high scores. 
     //Two buttons: 1. Clear high scores 2. Restart
+
+function hideStart(){
+    startScreen.setAttribute("style", "display:none;")
+}
+
+startButton.addEventListener("click", function(){
+    hideStart();
+})
+
+function answerQuestion () {}
+
+
 
 var timeLeft 
 

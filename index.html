@@ -12,7 +12,7 @@
 
 <body>
     <!-- Highscores link and timer -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light start">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="#">High scores</a>
@@ -20,7 +20,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Time</a>
+                <a class="nav-link" id="countdownClock">Time</a>
             </li>
         </ul>
     </nav>
@@ -37,16 +37,16 @@
         <h2>Question 1: Commonly used data types do NOT include?</h2>
         <ul class="questionList">
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">1. Strings</button>
+                <button type="button" class="btn btn-custom" class="Wrong">1. Strings</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Correct">2. Alerts</button>
+                <button type="button" class="btn btn-custom" class="Correct">2. Alerts</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">3. Numbers</button>
+                <button type="button" class="btn btn-custom" class="Wrong">3. Numbers</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">4. Booleans</button>
+                <button type="button" class="btn btn-custom" class="Wrong">4. Booleans</button>
             </li>
         </ul>
     </main>
@@ -55,16 +55,16 @@
         <h2>Question 2: Arrays in JavaScript can be used to store _____.</h2>
         <ul class="questionList">
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">1. numbers and strings</button>
+                <button type="button" class="btn btn-custom" class="Wrong">1. numbers and strings</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">2. other arrays</button>
+                <button type="button" class="btn btn-custom" class="Wrong">2. other arrays</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">3. booleans</button>
+                <button type="button" class="btn btn-custom" class="Wrong">3. booleans</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Correct">4. all of the above</button>
+                <button type="button" class="btn btn-custom" class="Correct">4. all of the above</button>
             </li>
         </ul>
     </main>
@@ -73,16 +73,16 @@
         <h2>Question 3: String values must be enclosed in ______ when being assigned to variables.</h2>
         <ul class="questionList">
             <li>
-                <button type="button" class="btn btn-custom" id="Correct">1. quotes</button>
+                <button type="button" class="btn btn-custom" class="Correct">1. quotes</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">2. brackets</button>
+                <button type="button" class="btn btn-custom" class="Wrong">2. brackets</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">3. parentheses</button>
+                <button type="button" class="btn btn-custom" class="Wrong">3. parentheses</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">4. commas</button>
+                <button type="button" class="btn btn-custom" class="Wrong">4. commas</button>
             </li>
         </ul>
     </main>
@@ -92,16 +92,16 @@
             is: </h2>
         <ul class="questionList">
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">1. JavaScript</button>
+                <button type="button" class="btn btn-custom" class="Wrong">1. JavaScript</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">2. terminal/bash</button>
+                <button type="button" class="btn btn-custom" class="Wrong">2. terminal/bash</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Wrong">3. for loops</button>
+                <button type="button" class="btn btn-custom" class="Wrong">3. for loops</button>
             </li>
             <li>
-                <button type="button" class="btn btn-custom" id="Correct">4. console.log</button>
+                <button type="button" class="btn btn-custom" class="Correct">4. console.log</button>
             </li>
         </ul>
     </main>
@@ -118,10 +118,10 @@
         </div>
     </main>
     <!-- Highscore scoreboard -->
-    <main class="container col-5" id="highScores">
+    <main class="container col-5" id="highscores">
         <h2>Highscores!</h2>
         <div class="card">
-            <div class="card-body" id="scoreBoard">
+            <div class="card-body" id="scoreboard">
                 High Scores Go Here!
             </div>
         </div>

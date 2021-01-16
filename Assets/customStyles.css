@@ -10,9 +10,6 @@ li {
     list-style-type: none;
 }
 
-.start {
-}
-
 .btn-custom {
     background-color: purple;
     border-color: purple;
@@ -24,8 +21,4 @@ li {
 
 .questionList {
     margin-left: 15%;
-}
-
-#scoreBoard {
-
 }
