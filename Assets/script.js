@@ -33,6 +33,9 @@ var q4Wrong2 = document.querySelector("#q4Wrong2")
 var q4Wrong3 = document.querySelector("#q4Wrong3")
 
 var submit = document.querySelector("#submit")
+var goBack = document.querySelector("#goBack")
+var boardInitials = document.querySelector("#boardInitials")
+var boardScore = document.querySelector("#boardScore")
 
 var timeLeft = 60;
 
@@ -58,19 +61,43 @@ var timeLeft = 60;
 //View initials and high scores. Go back or clear high scores. 
     //Two buttons: 1. Clear high scores 2. Restart
 
+//hides start menu and shows the first question.
 function hideStart(){
     startScreen.setAttribute("style", "display:none;");
     question1.setAttribute("style", "display:block;");
 };
 
+//this function runs the timer
+function quizTimer() {
+    var timer = setInterval(function () {
+        timeLeft--;
+
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            timeRunsOut()
+        } 
+        
+        else {
+            countdownClock.textContent = timeLeft;
+        }
+    }, 1000);
+}
+
+//when you click start button you hide the start menue and start the quiz timer.
 startButton.addEventListener("click", function(){
     hideStart();
     quizTimer();
 });
 
+//hides the first question
 function hideQ1(){
     question1.setAttribute("style", "display:none;");
     question2.setAttribute("style", "display:block;");
+
+    if (timeleft = 0) {
+        finishQuiz()
+        cacheScore()
+    }
 };
 
 q1Correct.addEventListener("click", function(){
@@ -141,7 +168,7 @@ q3Wrong3.addEventListener("click", function(){
     timeLeft -= 10;
 });
 
-function hideQ4(){
+function finishQuiz(){
     question4.setAttribute("style", "display:none;");
     initialForm.setAttribute("style", "display:block;");
     userClock.setAttribute("style", "display:none;")
@@ -149,21 +176,21 @@ function hideQ4(){
  }
 
  q4Correct.addEventListener("click", function(){
-     hideQ4();
+     finishQuiz();
  });
 
  q4Wrong1.addEventListener("click", function(){
-     hideQ4();
+     finishQuiz();
      timeLeft -= 10;
  });
 
  q4Wrong2.addEventListener("click", function(){
-    hideQ4();
+    finishQuiz();
     timeLeft -= 10;
 });
 
 q4Wrong3.addEventListener("click", function(){
-    hideQ4();
+    finishQuiz();
     timeLeft -= 10;
 });
 
@@ -187,7 +214,13 @@ submit.addEventListener("click", function (event) {
         initialForm.setAttribute("style", "display:none;");
         highscores.setAttribute("style", "display:block;");        
     }
+})
 
+goBack.addEventListener("click", function (event) {
+       
+    boardInitials.textContent = localStorage.getItem("initials")
+    
+    boardScore.textContent = localStorage.getItem("score")
 })
 
 
@@ -197,16 +230,22 @@ function quizTimer() {
     var timer = setInterval(function () {
         timeLeft--;
 
-        if (timeLeft < 0) {
+        if (timeLeft <= 0) {
             clearInterval(timer);
-            hideQ1()
-            hideQ2()
-            hideQ3()
-            hideQ4()
+            timeRunsOut()
         } 
         
         else {
             countdownClock.textContent = timeLeft;
         }
     }, 1000);
+}
+
+//time runs out function
+function timeRunsOut() {
+    question1.setAttribute("style", "display:none;");
+    question2.setAttribute("style", "display:none;");
+    question3.setAttribute("style", "display:none;");
+    question4.setAttribute("style", "display:none;");
+    initialForm.setAttribute("style", "display:block;");
 }
