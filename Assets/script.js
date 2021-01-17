@@ -182,11 +182,15 @@ submit.addEventListener("click", function (event) {
         alert("You can't leave initials blank!");
     } else {
         alert("Highscore submitted, hooray!")
-
         localStorage.setItem("initials", initials)
+        
+        initialForm.setAttribute("style", "display:none;");
+        highscores.setAttribute("style", "display:block;");        
     }
 
 })
+
+
 
 //this function runs the timer
 function quizTimer() {
@@ -199,7 +203,9 @@ function quizTimer() {
             hideQ2()
             hideQ3()
             hideQ4()
-        } else {
+        } 
+        
+        else {
             countdownClock.textContent = timeLeft;
         }
     }, 1000);
