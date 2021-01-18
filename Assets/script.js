@@ -34,6 +34,7 @@ var q4Wrong3 = document.querySelector("#q4Wrong3")
 
 var submit = document.querySelector("#submit")
 var goBack = document.querySelector("#goBack")
+var clearHighscores = document.querySelector("#clearHighscores")
 var boardInitials = document.querySelector("#boardInitials")
 var boardScore = document.querySelector("#boardScore")
 
@@ -95,7 +96,7 @@ function hideQ1(){
     question2.setAttribute("style", "display:block;");
 
     if (timeleft = 0) {
-        finishQuiz()
+        timeRunsOut()
         cacheScore()
     }
 };
@@ -123,6 +124,11 @@ q1Wrong3.addEventListener("click", function(){
 function hideQ2(){
     question2.setAttribute("style", "display:none;");
     question3.setAttribute("style", "display:block;");
+
+    if (timeleft = 0) {
+        timeRunsOut()
+        cacheScore()
+    }
 };
 
 q2Correct.addEventListener("click", function(){
@@ -144,10 +150,15 @@ q2Wrong3.addEventListener("click", function(){
     timeLeft -= 10;
 });
 
-function hideQ3(){
+function hideQ3() {
     question3.setAttribute("style", "display:none;");
-     question4.setAttribute("style", "display:block;");
- }
+    question4.setAttribute("style", "display:block;");
+
+    if (timeleft = 0) {
+        timeRunsOut()
+        cacheScore()
+    }
+}
 
  q3Correct.addEventListener("click", function(){
      hideQ3();
@@ -173,6 +184,14 @@ function finishQuiz(){
     initialForm.setAttribute("style", "display:block;");
     userClock.setAttribute("style", "display:none;")
     cacheScore();
+
+    if (timeleft = 0) {
+        timeRunsOut()
+        cacheScore()
+    }
+    else {
+        clearInterval(quizTimer())
+    }
  }
 
  q4Correct.addEventListener("click", function(){
@@ -210,20 +229,23 @@ submit.addEventListener("click", function (event) {
     } else {
         alert("Highscore submitted, hooray!")
         localStorage.setItem("initials", initials)
-        
         initialForm.setAttribute("style", "display:none;");
-        highscores.setAttribute("style", "display:block;");        
+        highscores.setAttribute("style", "display:block;");
+        boardInitials.textContent = (localStorage.getItem("initials") + " -")
+        boardScore.textContent = localStorage.getItem("score")      
     }
 })
 
 goBack.addEventListener("click", function (event) {
-       
-    boardInitials.textContent = localStorage.getItem("initials")
-    
-    boardScore.textContent = localStorage.getItem("score")
+    startScreen.setAttribute("style", "display:block;")
+    userClock.setAttribute("style", "display:block;")
+    highscores.setAttribute("style", "display:none;");
 })
 
-
+clearHighscores.addEventListener("click", function (event) {
+    boardInitials.textContent = ""
+    boardScore.textContent = ""        
+})
 
 //this function runs the timer
 function quizTimer() {
@@ -247,5 +269,5 @@ function timeRunsOut() {
     question2.setAttribute("style", "display:none;");
     question3.setAttribute("style", "display:none;");
     question4.setAttribute("style", "display:none;");
-    initialForm.setAttribute("style", "display:block;");
+    highscores.setAttribute("style", "display:block;");
 }
