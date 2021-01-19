@@ -209,9 +209,10 @@ submit.addEventListener("click", function (event) {
 
 //Back button
 goBack.addEventListener("click", function (event) {
-    startScreen.setAttribute("style", "display:block;")
-    userClock.setAttribute("style", "display:block;")
+    startScreen.setAttribute("style", "display:block;");
+    userClock.setAttribute("style", "display:block;");
     highscores.setAttribute("style", "display:none;");
+    timeLeft = 60;
 })
 
 //Clear high scores button
