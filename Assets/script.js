@@ -13,6 +13,7 @@ var highscores = document.querySelector("#highscores")
 var scoreboard = document.querySelector("#scoreboard")
 var userClock = document.querySelector("#userClock")
 var finalScore = document.querySelector("#finalScore")
+var viewHighscores = document.querySelector("#viewHighscores")
 
 //Answer buttons
 var q1Correct = document.querySelector("#q1Correct")
@@ -44,7 +45,16 @@ var timeLeft = 60;
 
 var gameFinished = false
 
+viewHighscores.addEventListener("click", function(){
+    startScreen.setAttribute("style", "display:none;");
+    question1.setAttribute("style", "display:none;");
+    question2.setAttribute("style", "display:none;");
+    question3.setAttribute("style", "display:none;");
+    question4.setAttribute("style", "display:none;");
+    initialForm.setAttribute("style", "display:none;");
+    highscores.setAttribute("style", "display:block;");
 
+})
 
 function hideStart(){
     startScreen.setAttribute("style", "display:none;");
