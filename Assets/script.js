@@ -2,49 +2,56 @@ var countdownClock = document.querySelector("#countdownClock");
 var startScreen = document.querySelector(".start");
 
 //Questions and screens
-var startButton = document.querySelector("#startButton")
-var question1 = document.querySelector("#Q1")
-var question2 = document.querySelector("#Q2")
-var question3 = document.querySelector("#Q3")
-var question4 = document.querySelector("#Q4")
-var initialForm = document.querySelector("#initialForm")
-var initialInput = document.querySelector("#initialInput")
-var highscores = document.querySelector("#highscores")
-var scoreboard = document.querySelector("#scoreboard")
-var userClock = document.querySelector("#userClock")
-var finalScore = document.querySelector("#finalScore")
-var viewHighscores = document.querySelector("#viewHighscores")
+var startButton = document.querySelector("#startButton");
+var question1 = document.querySelector("#Q1");
+var question2 = document.querySelector("#Q2");
+var question3 = document.querySelector("#Q3");
+var question4 = document.querySelector("#Q4");
+var initialForm = document.querySelector("#initialForm");
+var initialInput = document.querySelector("#initialInput");
+var highscores = document.querySelector("#highscores");
+var scoreboard = document.querySelector("#scoreboard");
+var userClock = document.querySelector("#userClock");
+var finalScore = document.querySelector("#finalScore");
+var viewHighscores = document.querySelector("#viewHighscores");
 
 //Answer buttons
-var q1Correct = document.querySelector("#q1Correct")
-var q1Wrong1 = document.querySelector("#q1Wrong1")
-var q1Wrong2 = document.querySelector("#q1Wrong2")
-var q1Wrong3 = document.querySelector("#q1Wrong3")
-var q2Correct = document.querySelector("#q2Correct")
-var q2Wrong1 = document.querySelector("#q2Wrong1")
-var q2Wrong2 = document.querySelector("#q2Wrong2")
-var q2Wrong3 = document.querySelector("#q2Wrong3")
-var q3Correct = document.querySelector("#q3Correct")
-var q3Wrong1 = document.querySelector("#q3Wrong1")
-var q3Wrong2 = document.querySelector("#q3Wrong2")
-var q3Wrong3 = document.querySelector("#q3Wrong3")
-var q4Correct = document.querySelector("#q4Correct")
-var q4Wrong1 = document.querySelector("#q4Wrong1")
-var q4Wrong2 = document.querySelector("#q4Wrong2")
-var q4Wrong3 = document.querySelector("#q4Wrong3")
+var q1Correct = document.querySelector("#q1Correct");
+var q1Wrong1 = document.querySelector("#q1Wrong1");
+var q1Wrong2 = document.querySelector("#q1Wrong2");
+var q1Wrong3 = document.querySelector("#q1Wrong3");
+var q2Correct = document.querySelector("#q2Correct");
+var q2Wrong1 = document.querySelector("#q2Wrong1");
+var q2Wrong2 = document.querySelector("#q2Wrong2");
+var q2Wrong3 = document.querySelector("#q2Wrong3");
+var q3Correct = document.querySelector("#q3Correct");
+var q3Wrong1 = document.querySelector("#q3Wrong1");
+var q3Wrong2 = document.querySelector("#q3Wrong2");
+var q3Wrong3 = document.querySelector("#q3Wrong3");
+var q4Correct = document.querySelector("#q4Correct");
+var q4Wrong1 = document.querySelector("#q4Wrong1");
+var q4Wrong2 = document.querySelector("#q4Wrong2");
+var q4Wrong3 = document.querySelector("#q4Wrong3");
 
 //End of game buttons
-var submit = document.querySelector("#submit")
-var goBack = document.querySelector("#goBack")
-var clearHighscores = document.querySelector("#clearHighscores")
-var boardInitials = document.querySelector("#boardInitials")
-var boardScore = document.querySelector("#boardScore")
+var submit = document.querySelector("#submit");
+var goBack = document.querySelector("#goBack");
+var clearHighscores = document.querySelector("#clearHighscores");
+var boardInitials = document.querySelector("#boardInitials");
+var boardScore = document.querySelector("#boardScore");
 
 //Start time
 var timeLeft = 60;
 
-var gameFinished = false
+// var gameFinished = false;
 
+//get stored scores
+// localStorage.getItem("initials", initials);
+// localStorage.getItem("score", timeLeft);
+// boardInitials.append.textContent = (localStorage.getItem("initials") + " -");
+// boardScore.append.textContent = localStorage.getItem("score");   
+
+//view highscores menu
 viewHighscores.addEventListener("click", function(){
     startScreen.setAttribute("style", "display:none;");
     question1.setAttribute("style", "display:none;");
@@ -53,8 +60,7 @@ viewHighscores.addEventListener("click", function(){
     question4.setAttribute("style", "display:none;");
     initialForm.setAttribute("style", "display:none;");
     highscores.setAttribute("style", "display:block;");
-
-})
+});
 
 function hideStart(){
     startScreen.setAttribute("style", "display:none;");
@@ -71,11 +77,10 @@ startButton.addEventListener("click", function(){
 function hideQ1(){
     question1.setAttribute("style", "display:none;");
     question2.setAttribute("style", "display:block;");
-
     if (timeleft = 0) {
-        timeRunsOut()
-        cacheScore()
-    }
+        timeRunsOut();
+        cacheScore();
+    };
 };
 
 q1Correct.addEventListener("click", function(){
@@ -103,9 +108,9 @@ function hideQ2(){
     question3.setAttribute("style", "display:block;");
 
     if (timeleft = 0) {
-        timeRunsOut()
-        cacheScore()
-    }
+        timeRunsOut();
+        cacheScore();
+    };
 };
 
 q2Correct.addEventListener("click", function(){
@@ -133,9 +138,9 @@ function hideQ3() {
     question4.setAttribute("style", "display:block;");
 
     if (timeleft = 0) {
-        timeRunsOut()
-        cacheScore()
-    }
+        timeRunsOut();
+        cacheScore();
+    };
 }
 
  q3Correct.addEventListener("click", function(){
@@ -158,7 +163,7 @@ q3Wrong3.addEventListener("click", function(){
 });
 
 //Moves to initial page after answering question 4
-function finishQuiz(){
+function finishQuiz() {
     question4.setAttribute("style", "display:none;");
     initialForm.setAttribute("style", "display:block;");
     userClock.setAttribute("style", "display:none;")
@@ -166,11 +171,10 @@ function finishQuiz(){
     cacheScore();
 
     if (timeleft = 0) {
-        timeRunsOut()
-        cacheScore()
-    }
-    
- }
+        timeRunsOut();
+        cacheScore();
+    };
+};
 
  q4Correct.addEventListener("click", function(){
      finishQuiz();
@@ -195,10 +199,10 @@ q4Wrong3.addEventListener("click", function(){
 //Caches and stores score
 function cacheScore() {
     localStorage.setItem("score", timeLeft);
-    console.log(timeLeft)
-    var userScore = localStorage.getItem("score")
+    console.log(timeLeft);
+    var userScore = localStorage.getItem("score");
     finalScore.textContent = userScore;
-    console.log(userScore)
+    console.log(userScore);
 }
 
 //Caches and stores initials.
@@ -212,8 +216,8 @@ submit.addEventListener("click", function (event) {
         localStorage.setItem("initials", initials)
         initialForm.setAttribute("style", "display:none;");
         highscores.setAttribute("style", "display:block;");
-        boardInitials.textContent = (localStorage.getItem("initials") + " -")
-        boardScore.textContent = localStorage.getItem("score")   
+        boardInitials.textContent = (localStorage.getItem("initials") + " -");
+        boardScore.textContent = localStorage.getItem("score");
     }
 })
 
@@ -227,25 +231,23 @@ goBack.addEventListener("click", function (event) {
 
 //Clear high scores button
 clearHighscores.addEventListener("click", function (event) {
-    boardInitials.textContent = ""
-    boardScore.textContent = ""        
+    boardInitials.textContent = "";
+    boardScore.textContent = "";        
 })
 
 //This function runs the timer
 function quizTimer() {
     var timer = setInterval(function () {
         timeLeft--;
-        console.log(timer)
+        console.log(timer);
 
         if (timeLeft <= 0) {
             clearInterval(timer);
             timeRunsOut();
-        } 
-        
+        }
         //  if (gameFinished = true) {
         //      clearInterval(timer);
         //  }
-
         else {
             countdownClock.textContent = timeLeft;
         }
@@ -259,7 +261,7 @@ function timeRunsOut() {
     question3.setAttribute("style", "display:none;");
     question4.setAttribute("style", "display:none;");
     highscores.setAttribute("style", "display:block;");
-}
+};
 
 // My pseudocode
 
