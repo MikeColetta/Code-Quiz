@@ -90,9 +90,9 @@ startButton.addEventListener("click", function(){
 function hideQ1(){
     // question1.setAttribute("style", "display:none;");
     // question2.setAttribute("style", "display:block;");
-    $(question1).delay(500).fadeOut();
-    $(question2).delay(1000).fadeIn();
-    $(answerConfirm).delay(500).fadeOut();
+    $(question1).delay(350).fadeOut();
+    $(question2).delay(750).fadeIn();
+    $(answerConfirm).delay(350).fadeOut();
     if (timeleft = 0) {
         timeRunsOut();
         cacheScore();
