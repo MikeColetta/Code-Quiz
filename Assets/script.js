@@ -57,13 +57,7 @@ if (localStorageContent !== null) {
     savedHighscores = JSON.parse(localStorageContent)
 }
 
-var gameFinished = false;
-
-//get stored scores
-// localStorage.getItem("initials", initials);
-// localStorage.getItem("score", timeLeft);
-// boardInitials.append.textContent = (localStorage.getItem("initials") + " -");
-// boardScore.append.textContent = localStorage.getItem("score");   
+var gameFinished = false;   
 
 //view highscores menu
 viewHighscores.addEventListener("click", function(){
@@ -92,8 +86,6 @@ startButton.addEventListener("click", function(){
 
 //Moves to question 2 after answering question 1
 function hideQ1(){
-    // question1.setAttribute("style", "display:none;");
-    // question2.setAttribute("style", "display:block;");
     $(question1).delay(350).fadeOut();
     $(question2).delay(750).fadeIn();
     $(answerConfirm1).delay(350).fadeOut();
@@ -129,8 +121,6 @@ q1Wrong3.addEventListener("click", function(){
 
 //Moves to question 3 after answering question 2
 function hideQ2(){
-    //question2.setAttribute("style", "display:none;");
-    //question3.setAttribute("style", "display:block;");
     $(question2).delay(350).fadeOut();
     $(question3).delay(750).fadeIn();
     $(answerConfirm2).delay(350).fadeOut();
@@ -166,8 +156,6 @@ q2Wrong3.addEventListener("click", function(){
 
 //Moves to question 4 after answering question 3
 function hideQ3() {
-    // question3.setAttribute("style", "display:none;");
-    // question4.setAttribute("style", "display:block;");
     $(question3).delay(350).fadeOut();
     $(question4).delay(750).fadeIn();
     $(answerConfirm3).delay(350).fadeOut();
@@ -203,9 +191,6 @@ q3Wrong3.addEventListener("click", function(){
 
 //Moves to initial page after answering question 4
 function finishQuiz() {
-    // question4.setAttribute("style", "display:none;");
-    // initialForm.setAttribute("style", "display:block;");
-    // userClock.setAttribute("style", "display:none;")
     $(question4).delay(350).fadeOut();
     $(initialForm).delay(750).fadeIn();
     $(userClock).delay(350).fadeOut();
@@ -250,7 +235,7 @@ submit.addEventListener("click", function (event) {
         alert("You can't leave initials blank!");
     } else {
         alert("Highscore submitted, hooray!")
-
+        userClock.setAttribute("style", "display:none;");
         initialForm.setAttribute("style", "display:none;");
         highscores.setAttribute("style", "display:block;");
         savedHighscores.push([initials, timeLeft])
@@ -297,9 +282,7 @@ function quizTimer() {
             clearInterval(timer);
             timeRunsOut();
         }
-        // else if (gameFinished = true) {
-        //      clearInterval(timer);
-        //  }
+    
         else {
             countdownClock.textContent = timeLeft;
         }
@@ -315,7 +298,7 @@ function timeRunsOut() {
     highscores.setAttribute("style", "display:block;");
 };
 
-//wrong answer function
+//wrong/Correct answer functions
 function wrongAnswer1(){
     answerConfirm1.setAttribute("style", "color: red;")
     answerConfirm1.textContent = "Wrong!"
