@@ -12,7 +12,7 @@ My first hiccup was realizing I would need separate IDs for every button in the 
 
 After I mapped out the quiz in it's entirety I started to add the functions that would implement the -10 second penalty to every wrong answer button pushed. I then set up the functionality for displaying the score, caching the user initials, and setting up the scoreboard. 
 
-Some big hurdles I had involved stopping the time interval and creating the local storage. 
+Some big hurdles I had involved stopping the time interval and creating the local storage. I realized my timer was not stopping unless it reached zero. So I moved the if statement stopping the timer if the player beat the quiz before the timer reaching zero. I also made a new variable to represent if the game was finished or not. For local storage I initially had the score and initials in two separate data storage variables. With help from my tutor I switched them to be a part of an array. I then call on them at the beginning of my application.
 
 
 ## Project Link
