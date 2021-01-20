@@ -62,12 +62,12 @@ viewHighscores.addEventListener("click", function(){
     highscores.setAttribute("style", "display:block;");
 });
 
+//When you click start button you hide the start menue and start the quiz timer.
 function hideStart(){
     startScreen.setAttribute("style", "display:none;");
     question1.setAttribute("style", "display:block;");
 };
 
-//When you click start button you hide the start menue and start the quiz timer.
 startButton.addEventListener("click", function(){
     hideStart();
     quizTimer();
