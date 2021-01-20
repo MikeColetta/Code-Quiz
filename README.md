@@ -14,6 +14,8 @@ After I mapped out the quiz in it's entirety I started to add the functions that
 
 Some big hurdles I had involved stopping the time interval and creating the local storage. I realized my timer was not stopping unless it reached zero. So I moved the if statement stopping the timer if the player beat the quiz before the timer reaching zero. I also made a new variable to represent if the game was finished or not. For local storage I initially had the score and initials in two separate data storage variables. With help from my tutor I switched them to be a part of an array. I then call on them at the beginning of my application.
 
+I noticed at this point that while my game was almost complete, I was missing the prompt that tells you whether you got the right or wrong answer. I decided to use JQuery for this since my code was already quite long. I used the .delay, .fadeIn and .fadeOut methods to make this work. I also have it set to change the text color to red when the answer is wrong. 
+
 
 ## Project Link
 [Deployed Link]()
