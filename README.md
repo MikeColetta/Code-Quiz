@@ -18,13 +18,18 @@ I noticed at this point that while my game was almost complete, I was missing th
 
 
 ## Project Link
-[Deployed Link]()
+[Deployed Link](https://mikecoletta.github.io/Code-Quiz/)
 
 ## Site Screenshot
-
-
-
+![Screenshot 1](Images\Screenshot1.JPG)
+![Screenshot 2](Images\Screenshot2.JPG)
+![Screenshot 3](Images\Screenshot3.JPG)
+![Screenshot 4](Images\Screenshot4.JPG)
+![Screenshot 5](Images\Screenshot5.JPG)
+![Screenshot 6](Images\Screenshot6.JPG)
+![Screenshot 7](Images\Screenshot7.JPG)
 
 ## Credits
+Stack Overflow on how to make an element fadeIn and fadeOut (https://stackoverflow.com/questions/2567832/code-to-make-div-appear-after-a-certain-amount-of-time)
 
 Clearing Local Storage (https://stackoverflow.com/questions/7667958/clearing-localstorage-in-javascript)
