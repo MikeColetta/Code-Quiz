@@ -12,6 +12,8 @@ My first hiccup was realizing I would need separate IDs for every button in the 
 
 After I mapped out the quiz in it's entirety I started to add the functions that would implement the -10 second penalty to every wrong answer button pushed. I then set up the functionality for displaying the score, caching the user initials, and setting up the scoreboard. 
 
+Some big hurdles I had involved stopping the time interval and creating the local storage. 
+
 
 ## Project Link
 [Deployed Link]()
