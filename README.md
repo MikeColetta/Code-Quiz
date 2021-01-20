@@ -25,3 +25,4 @@ Some big hurdles I had involved stopping the time interval and creating the loca
 
 ## Credits
 
+Clearing Local Storage (https://stackoverflow.com/questions/7667958/clearing-localstorage-in-javascript)

@@ -54,7 +54,28 @@ li {
     display: none;
 }
 
-.answerConfirm {
+#answerConfirm1 {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: green;
+}
+
+#answerConfirm2 {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: green;
+}
+
+#answerConfirm3 {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: green;
+}
+
+#answerConfirm4 {
     text-align: center;
     font-size: x-large;
     font-weight: bold;
