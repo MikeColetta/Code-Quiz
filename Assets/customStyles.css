@@ -53,3 +53,10 @@ li {
 #highscores {
     display: none;
 }
+
+.answerConfirm {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: green;
+}

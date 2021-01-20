@@ -14,7 +14,7 @@ var scoreboard = document.querySelector("#scoreboard");
 var userClock = document.querySelector("#userClock");
 var finalScore = document.querySelector("#finalScore");
 var viewHighscores = document.querySelector("#viewHighscores");
-var answerConfirm = document.querySelector("#answerConfirm")
+var answerConfirm = document.querySelector(".answerConfirm")
 
 //Answer buttons
 var q1Correct = document.querySelector("#q1Correct");
@@ -92,6 +92,7 @@ function hideQ1(){
     // question2.setAttribute("style", "display:block;");
     $(question1).delay(500).fadeOut();
     $(question2).delay(1000).fadeIn();
+    $(answerConfirm).delay(500).fadeOut();
     if (timeleft = 0) {
         timeRunsOut();
         cacheScore();
@@ -99,22 +100,25 @@ function hideQ1(){
 };
 
 q1Correct.addEventListener("click", function(){
+    rightAnswer()
     hideQ1();
 });
 
 q1Wrong1.addEventListener("click", function(){
-    wrongAnswer()
+    wrongAnswer();
     hideQ1();
     timeLeft -= 10;
     
 });
 
 q1Wrong2.addEventListener("click", function(){
+    wrongAnswer();
     hideQ1();
     timeLeft -= 10;
 });
 
 q1Wrong3.addEventListener("click", function(){
+    wrongAnswer();
     hideQ1();
     timeLeft -= 10;
 });
@@ -287,6 +291,7 @@ function timeRunsOut() {
 
 //wrong answer function
 function wrongAnswer(){
+    answerConfirm.setAttribute("style", "color: red;")
     answerConfirm.textContent = "Wrong!"
 }
 
