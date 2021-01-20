@@ -43,7 +43,16 @@ var boardScore = document.querySelector("#boardScore");
 //Start time
 var timeLeft = 60;
 
-// var gameFinished = false;
+var savedHighscores = [];
+
+var localStorageContent = localStorage.getItem("savedHighscores")
+console.log(localStorageContent)
+
+if (localStorageContent !== null) {
+    savedHighscores = JSON.parse(localStorageContent)
+}
+
+var gameFinished = false;
 
 //get stored scores
 // localStorage.getItem("initials", initials);
@@ -60,12 +69,15 @@ viewHighscores.addEventListener("click", function(){
     question4.setAttribute("style", "display:none;");
     initialForm.setAttribute("style", "display:none;");
     highscores.setAttribute("style", "display:block;");
+    gameFinished = true
+    displayScores()
 });
 
-//When you click start button you hide the start menue and start the quiz timer.
+//When you click start button you hide the start menu and start the quiz timer.
 function hideStart(){
     startScreen.setAttribute("style", "display:none;");
     question1.setAttribute("style", "display:block;");
+    gameFinished = false;
 };
 
 startButton.addEventListener("click", function(){
@@ -168,11 +180,11 @@ function finishQuiz() {
     initialForm.setAttribute("style", "display:block;");
     userClock.setAttribute("style", "display:none;")
     gameFinished = true
-    cacheScore();
+    finalScore.textContent = timeLeft;
 
     if (timeleft = 0) {
         timeRunsOut();
-        cacheScore();
+        finalScore.textContent = timeLeft;
     };
 };
 
@@ -195,16 +207,6 @@ q4Wrong3.addEventListener("click", function(){
     finishQuiz();
 });
 
-
-//Caches and stores score
-function cacheScore() {
-    localStorage.setItem("score", timeLeft);
-    console.log(timeLeft);
-    var userScore = localStorage.getItem("score");
-    finalScore.textContent = userScore;
-    console.log(userScore);
-}
-
 //Caches and stores initials.
 submit.addEventListener("click", function (event) {
 
@@ -213,13 +215,23 @@ submit.addEventListener("click", function (event) {
         alert("You can't leave initials blank!");
     } else {
         alert("Highscore submitted, hooray!")
-        localStorage.setItem("initials", initials)
+
         initialForm.setAttribute("style", "display:none;");
         highscores.setAttribute("style", "display:block;");
-        boardInitials.textContent = (localStorage.getItem("initials") + " -");
-        boardScore.textContent = localStorage.getItem("score");
+        savedHighscores.push([initials, timeLeft])
+        localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores))
+        displayScores()
     }
 })
+
+function displayScores() {
+    scoreboard.innerHTML = ""
+    for (var i = 0; i < savedHighscores.length; i++) {
+        var currentScore = document.createElement("p")
+        currentScore.textContent = savedHighscores[i][0] + " - " + savedHighscores[i][1]
+        scoreboard.append(currentScore)
+    }
+}
 
 //Back button
 goBack.addEventListener("click", function (event) {
@@ -227,12 +239,13 @@ goBack.addEventListener("click", function (event) {
     userClock.setAttribute("style", "display:block;");
     highscores.setAttribute("style", "display:none;");
     timeLeft = 60;
+    countdownClock.textContent = timeLeft
 })
 
 //Clear high scores button
 clearHighscores.addEventListener("click", function (event) {
-    boardInitials.textContent = "";
-    boardScore.textContent = "";        
+    scoreboard.innerHTML = ""
+    localStorage.setItem("savedHighscores", JSON.stringify([]))     
 })
 
 //This function runs the timer
@@ -241,11 +254,15 @@ function quizTimer() {
         timeLeft--;
         console.log(timer);
 
-        if (timeLeft <= 0) {
+         if (gameFinished === true) {
+              clearInterval(timer);
+          }
+
+        else if (timeLeft <= 0) {
             clearInterval(timer);
             timeRunsOut();
         }
-        //  if (gameFinished = true) {
+        // else if (gameFinished = true) {
         //      clearInterval(timer);
         //  }
         else {
