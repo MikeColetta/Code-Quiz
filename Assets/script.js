@@ -14,6 +14,7 @@ var scoreboard = document.querySelector("#scoreboard");
 var userClock = document.querySelector("#userClock");
 var finalScore = document.querySelector("#finalScore");
 var viewHighscores = document.querySelector("#viewHighscores");
+var answerConfirm = document.querySelector("#answerConfirm")
 
 //Answer buttons
 var q1Correct = document.querySelector("#q1Correct");
@@ -87,8 +88,10 @@ startButton.addEventListener("click", function(){
 
 //Moves to question 2 after answering question 1
 function hideQ1(){
-    question1.setAttribute("style", "display:none;");
-    question2.setAttribute("style", "display:block;");
+    // question1.setAttribute("style", "display:none;");
+    // question2.setAttribute("style", "display:block;");
+    $(question1).delay(500).fadeOut();
+    $(question2).delay(1000).fadeIn();
     if (timeleft = 0) {
         timeRunsOut();
         cacheScore();
@@ -100,8 +103,10 @@ q1Correct.addEventListener("click", function(){
 });
 
 q1Wrong1.addEventListener("click", function(){
+    wrongAnswer()
     hideQ1();
     timeLeft -= 10;
+    
 });
 
 q1Wrong2.addEventListener("click", function(){
@@ -279,6 +284,15 @@ function timeRunsOut() {
     question4.setAttribute("style", "display:none;");
     highscores.setAttribute("style", "display:block;");
 };
+
+//wrong answer function
+function wrongAnswer(){
+    answerConfirm.textContent = "Wrong!"
+}
+
+function rightAnswer() {
+    answerConfirm.textContent = "Correct!"
+}
 
 // My pseudocode
 
