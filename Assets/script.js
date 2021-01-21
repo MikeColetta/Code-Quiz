@@ -46,15 +46,15 @@ var boardInitials = document.querySelector("#boardInitials");
 var boardScore = document.querySelector("#boardScore");
 
 //Start time
-var timeLeft = 60;
+var timeLeft = 75;
 
 var savedHighscores = [];
 
-var localStorageContent = localStorage.getItem("savedHighscores")
-console.log(localStorageContent)
+var localStorageContent = localStorage.getItem("savedHighscores");
+console.log(localStorageContent);
 
 if (localStorageContent !== null) {
-    savedHighscores = JSON.parse(localStorageContent)
+    savedHighscores = JSON.parse(localStorageContent);
 }
 
 var gameFinished = false;   
@@ -96,7 +96,7 @@ function hideQ1(){
 };
 
 q1Correct.addEventListener("click", function(){
-    correctAnswer1()
+    correctAnswer1();
     hideQ1();
 });
 
@@ -132,7 +132,7 @@ function hideQ2(){
 };
 
 q2Correct.addEventListener("click", function(){
-    correctAnswer2()
+    correctAnswer2();
     hideQ2();
 });
 
@@ -167,7 +167,7 @@ function hideQ3() {
 }
 
  q3Correct.addEventListener("click", function(){
-    correctAnswer3() 
+    correctAnswer3();
     hideQ3();
  });
 
@@ -195,7 +195,7 @@ function finishQuiz() {
     $(initialForm).delay(750).fadeIn();
     $(userClock).delay(350).fadeOut();
     $(answerConfirm4).delay(350).fadeOut();
-    gameFinished = true
+    gameFinished = true;
     finalScore.textContent = timeLeft;
 
     if (timeleft = 0) {
@@ -205,7 +205,7 @@ function finishQuiz() {
 };
 
  q4Correct.addEventListener("click", function(){
-    correctAnswer4() 
+    correctAnswer4();
     finishQuiz();
  });
 
@@ -227,29 +227,29 @@ q4Wrong3.addEventListener("click", function(){
     finishQuiz();
 });
 
-//Caches and stores initials.
+//Caches and stores initials and score.
 submit.addEventListener("click", function (event) {
 
     var initials = document.querySelector("#initials").value;
     if (initials === "") {
         alert("You can't leave initials blank!");
     } else {
-        alert("Highscore submitted, hooray!")
+        alert("Highscore submitted, hooray!");
         userClock.setAttribute("style", "display:none;");
         initialForm.setAttribute("style", "display:none;");
         highscores.setAttribute("style", "display:block;");
-        savedHighscores.push([initials, timeLeft])
-        localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores))
-        displayScores()
-    }
-})
+        savedHighscores.push([initials, timeLeft]);
+        localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
+        displayScores();
+    };
+});
 
 function displayScores() {
     scoreboard.innerHTML = ""
     for (var i = 0; i < savedHighscores.length; i++) {
-        var currentScore = document.createElement("p")
-        currentScore.textContent = savedHighscores[i][0] + " - " + savedHighscores[i][1]
-        scoreboard.append(currentScore)
+        var currentScore = document.createElement("p");
+        currentScore.textContent = savedHighscores[i][0] + " - " + savedHighscores[i][1];
+        scoreboard.append(currentScore);
     }
 }
 
@@ -258,16 +258,16 @@ goBack.addEventListener("click", function (event) {
     startScreen.setAttribute("style", "display:block;");
     userClock.setAttribute("style", "display:block;");
     highscores.setAttribute("style", "display:none;");
-    timeLeft = 60;
-    countdownClock.textContent = timeLeft
+    timeLeft = 75;
+    countdownClock.textContent = timeLeft;
 })
 
 //Clear high scores button
 clearHighscores.addEventListener("click", function (event) {
-    scoreboard.innerHTML = ""
-    localStorage.setItem("savedHighscores", JSON.stringify([]))
-    localStorage.clear();
-    console.log(localStorage)
+    scoreboard.innerHTML = "";
+    localStorage.setItem("savedHighscores", JSON.stringify([]));
+    localStorage.removeItem(savedHighscores);
+    console.log(localStorage);
 })
 
 //This function runs the timer
@@ -302,8 +302,8 @@ function timeRunsOut() {
 
 //wrong/Correct answer functions
 function wrongAnswer1(){
-    answerConfirm1.setAttribute("style", "color: red;")
-    answerConfirm1.textContent = "Wrong!"
+    answerConfirm1.setAttribute("style", "color: red;");
+    answerConfirm1.textContent = "Wrong!";
 }
 
 function correctAnswer1() {
@@ -311,30 +311,30 @@ function correctAnswer1() {
 }
 
 function wrongAnswer2(){
-    answerConfirm2.setAttribute("style", "color: red;")
+    answerConfirm2.setAttribute("style", "color: red;");
     answerConfirm2.textContent = "Wrong!"
 }
 
 function correctAnswer2() {
-    answerConfirm2.textContent = "Correct!"
+    answerConfirm2.textContent = "Correct!";
 }
 
 function wrongAnswer3(){
-    answerConfirm3.setAttribute("style", "color: red;")
-    answerConfirm3.textContent = "Wrong!"
+    answerConfirm3.setAttribute("style", "color: red;");
+    answerConfirm3.textContent = "Wrong!";
 }
 
 function correctAnswer3() {
-    answerConfirm3.textContent = "Correct!"
+    answerConfirm3.textContent = "Correct!";
 }
 
 function wrongAnswer4(){
-    answerConfirm4.setAttribute("style", "color: red;")
-    answerConfirm4.textContent = "Wrong!"
+    answerConfirm4.setAttribute("style", "color: red;");
+    answerConfirm4.textContent = "Wrong!";
 }
 
 function correctAnswer4(){
-    answerConfirm4.textContent = "Correct!"
+    answerConfirm4.textContent = "Correct!";
 }
 
 // My pseudocode
