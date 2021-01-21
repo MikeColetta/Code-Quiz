@@ -33,3 +33,5 @@ I noticed at this point that while my game was almost complete, I was missing th
 Stack Overflow on how to make an element fadeIn and fadeOut (https://stackoverflow.com/questions/2567832/code-to-make-div-appear-after-a-certain-amount-of-time)
 
 Clearing Local Storage (https://stackoverflow.com/questions/7667958/clearing-localstorage-in-javascript)
+
+Changing Focus Attribute in Bootstrap (https://stackoverflow.com/questions/50912050/bootstrap-button-focus)
