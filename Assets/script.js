@@ -266,6 +266,8 @@ goBack.addEventListener("click", function (event) {
 clearHighscores.addEventListener("click", function (event) {
     scoreboard.innerHTML = ""
     localStorage.setItem("savedHighscores", JSON.stringify([]))
+    localStorage.clear();
+    console.log(localStorage)
 })
 
 //This function runs the timer

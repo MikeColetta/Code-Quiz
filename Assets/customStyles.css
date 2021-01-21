@@ -16,8 +16,13 @@ li {
     color: white;
     margin-top: 5px;
     margin-left: 5px;
-    height: 44px 
+    height: 44px
 }
+
+.btn.btn-custom:focus {
+    color: white;
+}
+
 .btn-submit {
     margin-top: 0px;
 }
