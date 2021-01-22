@@ -243,6 +243,7 @@ submit.addEventListener("click", function (event) {
     };
 });
 
+//Displays scores on highscore screen
 function displayScores() {
     scoreboard.innerHTML = ""
     for (var i = 0; i < savedHighscores.length; i++) {
@@ -269,7 +270,7 @@ clearHighscores.addEventListener("click", function (event) {
     console.log(localStorage);
 })
 
-//This function runs the timer
+//Timer function
 function quizTimer() {
     var timer = setInterval(function () {
         timeLeft--;
