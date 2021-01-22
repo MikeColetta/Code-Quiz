@@ -50,6 +50,7 @@ var timeLeft = 75;
 
 var savedHighscores = [];
 
+//pull from local storage and put onto high scores.
 var localStorageContent = localStorage.getItem("savedHighscores");
 console.log(localStorageContent);
 
@@ -57,7 +58,8 @@ if (localStorageContent !== null) {
     savedHighscores = JSON.parse(localStorageContent);
 }
 
-var gameFinished = false;   
+var gameFinished = false;
+console.log(gameFinished)   
 
 //view highscores menu
 viewHighscores.addEventListener("click", function(){
@@ -229,7 +231,6 @@ q4Wrong3.addEventListener("click", function(){
 
 //Caches and stores initials and score.
 submit.addEventListener("click", function (event) {
-
     var initials = document.querySelector("#initials").value;
     if (initials === "") {
         alert("You can't leave initials blank!");
@@ -266,7 +267,7 @@ goBack.addEventListener("click", function (event) {
 clearHighscores.addEventListener("click", function (event) {
     scoreboard.innerHTML = "";
     localStorage.setItem("savedHighscores", JSON.stringify([]));
-    localStorage.removeItem(savedHighscores);
+    savedHighscores = []
     console.log(localStorage);
 })
 
@@ -276,15 +277,14 @@ function quizTimer() {
         timeLeft--;
         console.log(timer);
 
-         if (gameFinished === true) {
-              clearInterval(timer);
-          }
+        if (gameFinished === true) {
+            clearInterval(timer);
+        }
 
-        else if (timeLeft <= 0) {
+        else if (timeLeft < 0) {
             clearInterval(timer);
             timeRunsOut();
         }
-    
         else {
             countdownClock.textContent = timeLeft;
         }
@@ -293,6 +293,7 @@ function quizTimer() {
 
 //Time runs out function
 function timeRunsOut() {
+    gameFinished = true;
     question1.setAttribute("style", "display:none;");
     question2.setAttribute("style", "display:none;");
     question3.setAttribute("style", "display:none;");
