@@ -25,7 +25,7 @@ Overall this was a very challenging assignment, but I feel very good about how m
 
 ## Site Screenshots
 
-![Screenshot 1](Images\Screenshot1.JPG)
+![Screenshot 1](/Images/Screenshot1.JPG)
 ![Screenshot 2](Images\Screenshot2.JPG)
 ![Screenshot 3](Images\Screenshot3.JPG)
 ![Screenshot 4](Images\Screenshot4.JPG)
