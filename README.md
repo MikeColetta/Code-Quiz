@@ -23,7 +23,7 @@ Overall this was a very challenging assignment, but I feel very good about how m
 ## Project Link
 [Deployed Link](https://mikecoletta.github.io/Code-Quiz/)
 
-## Site Screenshot
+## Site Screenshots
 ![Screenshot 1](Images\Screenshot1.JPG)
 ![Screenshot 2](Images\Screenshot2.JPG)
 ![Screenshot 3](Images\Screenshot3.JPG)
@@ -33,7 +33,7 @@ Overall this was a very challenging assignment, but I feel very good about how m
 ![Screenshot 7](Images\Screenshot7.JPG)
 
 ## Credits
-Stack Overflow on how to make an element fadeIn and fadeOut (https://stackoverflow.com/questions/2567832/code-to-make-div-appear-after-a-certain-amount-of-time)
+How to make an element fadeIn and fadeOut (https://stackoverflow.com/questions/2567832/code-to-make-div-appear-after-a-certain-amount-of-time)
 
 Clearing Local Storage (https://stackoverflow.com/questions/7667958/clearing-localstorage-in-javascript)
 
