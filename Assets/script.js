@@ -19,7 +19,6 @@ var answerConfirm2 = document.querySelector("#answerConfirm2")
 var answerConfirm3 = document.querySelector("#answerConfirm3")
 var answerConfirm4 = document.querySelector("#answerConfirm4")
 
-
 //Answer buttons
 var q1Correct = document.querySelector("#q1Correct");
 var q1Wrong1 = document.querySelector("#q1Wrong1");
@@ -58,8 +57,7 @@ if (localStorageContent !== null) {
     savedHighscores = JSON.parse(localStorageContent);
 }
 
-var gameFinished = false;
-console.log(gameFinished)   
+var gameFinished = false; 
 
 //view highscores menu
 viewHighscores.addEventListener("click", function(){
@@ -301,7 +299,7 @@ function timeRunsOut() {
     highscores.setAttribute("style", "display:block;");
 };
 
-//wrong/Correct answer functions
+//Wrong/Correct answer functions
 function wrongAnswer1(){
     answerConfirm1.setAttribute("style", "color: red;");
     answerConfirm1.textContent = "Wrong!";

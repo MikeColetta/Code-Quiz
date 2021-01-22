@@ -16,6 +16,9 @@ Some big hurdles I had involved stopping the time interval and creating the loca
 
 I noticed at this point that while my game was almost complete, I was missing the prompt that tells you whether you got the right or wrong answer. I decided to use JQuery for this since my code was already quite long and we have been learning that in class this week. I used the .delay, .fadeIn and .fadeOut methods to make this work. I also have it set to change the text color to red when the answer is wrong.
 
+My final step fixing a bug I had when the user clicks the "Clear highscores" button. The problem was while the local storage was emptied the saveHighscores array was not blank if the user had just played a game. So I set that to an empty array. 
+
+Overall this was a very challenging assignment, but I feel very good about how much I was able to figure out myself along the way.
 
 ## Project Link
 [Deployed Link](https://mikecoletta.github.io/Code-Quiz/)
