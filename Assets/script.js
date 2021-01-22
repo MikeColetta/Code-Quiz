@@ -1,7 +1,6 @@
+//Questions and screens
 var countdownClock = document.querySelector("#countdownClock");
 var startScreen = document.querySelector(".start");
-
-//Questions and screens
 var startButton = document.querySelector("#startButton");
 var question1 = document.querySelector("#Q1");
 var question2 = document.querySelector("#Q2");
