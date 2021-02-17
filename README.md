@@ -4,6 +4,12 @@
 
 I created a quiz game on coding. The quiz game has a timer that starts when the player starts the game and counts down from 60 seconds. When the timer reaches 0 the game ends. 
 
+## Technologies Used
+* HTML5
+* CSS
+* Bootstrap
+* JavaScript
+
 ## My Process
 
 I started working on the pseudocode for this class first. That really helped me plan out and realize what I was doing. The first steps were to get the HTML and CSS in a good place. After that, I started to work on the Javascript. I added most of my variables first, then the timer and finally the button that started the quiz.
