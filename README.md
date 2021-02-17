@@ -8,6 +8,7 @@ I created a quiz game on coding. The quiz game has a timer that starts when the 
 * HTML5
 * CSS
 * Bootstrap
+* JQuery
 * JavaScript
 
 ## My Process
